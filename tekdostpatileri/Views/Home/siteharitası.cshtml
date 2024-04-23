@@ -1,0 +1,56 @@
+﻿@model List<tekdostpatileri.Models.Yuvamız>
+@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	TekDostPatileriDbContext db = new TekDostPatileriDbContext();
+	var yuvamıziçerik = db.yuvamızs.FirstOrDefault();
+}
+@section başlık{
+      TekDostPatileri | SiteHaritası
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="~/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+<body>
+	<section class="map-section">
+		<div class="content-t"><h3 class="map-title text-center"><b>Site Haritası</b></h3></div>
+		<div class="container container-sitemap section-q">
+			<div class="row m">
+				<div class="column col-lg-4 mobile-center">
+					<img src="~/img/r3.png" class="img-fluid-a">
+					<h6>Sayfalar</h6>
+					<ul class="sitemap-list">
+						<li><a href="/Home/Index">Anasayfa</a></li>
+						<li><a href="/Home/hakkında">Hakkımızda</a></li>
+						<li><a href="/Home/hizmetler">Hizmetlerimiz</a></li>
+						<li><a href="/Home/yuvamız">Yuvamız</a></li>
+						<li><a href="/Home/galeri">Galeri</a></li>
+						<li><a href="/Home/iletişim">İletişim</a></li>
+					</ul>
+				</div>
+				@if(yuvamıziçerik != null)
+				{
+				<div class="column col-lg-4 mobile-center">
+					<img src="~/img/r7.png" class="img-fluid-a">
+					<h6>Canlarımız</h6>
+					<ul class="sitemap-list">
+						@foreach(var değer in Model)
+						{
+						<li><a href="/Home/yuva1/@değer.Id">@değer.Yuvaİsim</a></li>
+					    }
+					</ul>
+				</div>
+				}
+			</div>
+		</div>
+	</section>
+	<script type="text/javascript" src="~/js/script.js"></script>
+	<script type="text/javascript" src="~/js/navbar.js"></script>
+</body>
+</html>

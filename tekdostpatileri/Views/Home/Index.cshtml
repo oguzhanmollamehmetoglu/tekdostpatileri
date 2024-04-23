@@ -1,0 +1,87 @@
+﻿@model ViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    TekDostPatileriDbContext db = new TekDostPatileriDbContext();
+    var anasayfaiçerik = db.anasayfas.FirstOrDefault();
+}
+@section başlık{
+      TekDostPatileri | Anasayfa
+}
+@{
+    // Sayfanın anasayfa olduğunu kontrol etmek için gerekli kodu burada yazın
+    bool isHomePage = true; // Varsayılan olarak anasayfa olarak kabul edelim
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="~/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+<body>
+    @if (anasayfaiçerik != null)
+    {
+        @if (isHomePage)
+        {
+            <section class="hero-section">
+                <div class="sliders">
+                <div class="slider">
+                    <div class="slide active" style="background: url('../img/Slider/@anasayfaiçerik.slider1img') no-repeat center/cover">
+                        <div class="inner">
+                            <h1>@Html.Raw(anasayfaiçerik.slider1başlık)</h1>
+                            <p>@Html.Raw(anasayfaiçerik.slider1yazı)</p>
+                        </div>
+                    </div>
+                        <div class="slide" style="background: url('../img/Slider/@anasayfaiçerik.slider2img') no-repeat center/cover">
+                        <div class="inner">
+                            <h1>@Html.Raw(anasayfaiçerik.slider2başlık)</h1>
+                            <p>@Html.Raw(anasayfaiçerik.slider2yazı)</p>
+                        </div>
+                    </div>
+                        <div class="slide" style="background: url('../img/Slider/@anasayfaiçerik.slider3img') no-repeat center/cover">
+                        <div class="inner">
+                            <h1>@Html.Raw(anasayfaiçerik.slider3başlık)</h1>
+                            <p>@Html.Raw(anasayfaiçerik.slider3yazı)</p>
+                        </div>
+                    </div>
+                        <div class="slide" style="background: url('../img/Slider/@anasayfaiçerik.slider4img') no-repeat center/cover">
+                        <div class="inner">
+                            <h1>@Html.Raw(anasayfaiçerik.slider4başlık)</h1>
+                            <p>@Html.Raw(anasayfaiçerik.slider4yazı)</p>
+                        </div>
+                    </div>
+                        <div class="slide" style="background: url('../img/Slider/@anasayfaiçerik.slider5img') no-repeat center/cover">
+                        <div class="inner">
+                            <h1>@Html.Raw(anasayfaiçerik.slider5başlık)</h1>
+                            <p>@Html.Raw(anasayfaiçerik.slider5yazı)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="indicators">
+                    <button id="prev"><i class="fa fa-angle-left"></i></button>
+                    <button id="next"><i class="fa fa-angle-right"></i></button>
+                </div>
+             </div>
+            </section>
+        }
+        <section class="İnfo-section section-q">
+            <div class="container" style="text-align:center;">
+            <p class="info">
+                @Html.Raw(anasayfaiçerik.önsözsesleniş)
+                @Html.Raw(anasayfaiçerik.önsöz)<br><br>
+            </p>
+        </div>
+    </section>
+    }
+    <section class="there-section">
+        <div class="picture">
+            <img src="~/img/r2.png">
+        </div>
+    </section>
+    <script type="text/javascript" src="~/js/script.js"></script>
+    <script type="text/javascript" src="~/js/navbar.js"></script>
+</body>
+</html>

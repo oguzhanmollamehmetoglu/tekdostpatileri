@@ -1,0 +1,432 @@
+﻿@using tekdostpatileri.Models;
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@model ViewModel
+@section başlık{
+      TekDostPatileri
+}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="~/css/adminpanel.css" type="text/css" rel="stylesheet" />
+
+<div class="container-fluid">
+    <div class="row" id="main">
+        <div class="col-sm-12 col-md-12 well" id="content">
+            @if (TempData["HataM1"] != null)
+            {
+                <div class="alert alert-success" role="alert">
+                    @TempData["HataM1"]
+                </div>
+            }
+            @if (TempData["HataM2"] != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @TempData["HataM2"]
+                </div>
+            }
+            @if (TempData["boş1"] != null)
+            {
+                <div>
+                    <h2>Logo Resmi</h2>
+                    <table class="table table-hover mx-auto text-center table-dark">
+                        <thead class="text-white-50 text-opacity-100">
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Url</th>
+                                <th scope="col">Sil</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.logos)
+                            {
+                                <tr>
+                                    <th scope="row">@item.Id</th>
+                                    <th><img width="60" height="60" src="/icon/@item.LogoUrl" /></th>
+                                    <th><a class="btn btn-danger btn-sm" href="~/Admin/AdminPaneli/Sil1/@item.Id">Sil</a></th>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            @if (TempData["boş2"] != null)
+            {
+                <h2>Anasayfa İçerik</h2>
+                    <div class="table-responsive">
+                      
+                        <table class="table table-hover mx-auto text-center table-dark">
+                            @foreach (var anasayfa in Model.anasayfas)
+                            {
+                                <thead class="text-white-50 text-opacity-100">
+                                    <tr>
+                                        <th scope="col">Id</th>
+                                        <th scope="col">Slider1Başlık</th>
+                                        <th scope="col">Slider1Yazı</th>
+                                        <th scope="col">Slider1İmg</th>
+                                        <th scope="col">Slider2Başlık</th>
+                                        <th scope="col">Slider2Yazı</th>
+                                        <th scope="col">Slider2İmg</th>
+                                        <th scope="col">Slider3Başlık</th>
+                                        <th scope="col">Slider3Yazı</th>
+                                        <th scope="col">Slider3İmg</th>
+                                        <th scope="col">Slider4Başlık</th>
+                                        <th scope="col">Slider4Yazı</th>
+                                        <th scope="col">Slider4İmg</th>
+                                        <th scope="col">Slider5Başlık</th>
+                                        <th scope="col">Slider5Yazı</th>
+                                        <th scope="col">Slider5İmg</th>
+                                        <th scope="col">ÖnsözSesleniş</th>
+                                        <th scope="col">Önsöz</th>
+                                        <th scope="col">Sil</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>@anasayfa.Id</td>
+                                        <td>@Html.Raw(anasayfa.slider1başlık)</td>
+                                        <td>@Html.Raw(anasayfa.slider1yazı)</td>
+                                        <td><img width="60" height="60" src="/img/Slider/@anasayfa.slider1img"/></td>
+                                        <td>@Html.Raw(anasayfa.slider2başlık)</td>
+                                        <td>@Html.Raw(anasayfa.slider2yazı)</td>
+                                        <td><img width="60" height="60" src="/img/Slider/@anasayfa.slider2img"/></td>
+                                        <td>@Html.Raw(anasayfa.slider3başlık)</td>
+                                        <td>@Html.Raw(anasayfa.slider3yazı)</td>
+                                        <td><img width="60" height="60" src="/img/Slider/@anasayfa.slider3img"/></td>
+                                        <td>@Html.Raw(anasayfa.slider4başlık)</td>
+                                        <td>@Html.Raw(anasayfa.slider4yazı)</td>
+                                        <td><img width="60" height="60" src="/img/Slider/@anasayfa.slider4img"/></td>
+                                        <td>@Html.Raw(anasayfa.slider5başlık)</td>
+                                        <td>@Html.Raw(anasayfa.slider5yazı)</td>
+                                        <td><img width="60" height="60" src="/img/Slider/@anasayfa.slider5img"/></td>
+                                        <td>@Html.Raw(anasayfa.önsözsesleniş)</td>
+                                        <td>@Html.Raw(anasayfa.önsöz)</td>
+                                        <td><a class="btn btn-danger btn-sm" href="~/Admin/AdminPaneli/Sil2/@anasayfa.Id">Sil</a></td>
+                                    </tr>
+                                </tbody>
+                            }
+                        </table>
+                    </div>
+            }
+            @if (TempData["boş3"] != null)
+            {
+                <h2>Hakkında İçerik</h2>
+                <div class="table-responsive">
+              
+                    <table class="table table-hover mx-auto text-center table-dark">
+                        <thead class="text-white-50 text-opacity-100">
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">KurucuResmi</th>
+                                <th scope="col">yazı1</th>
+                                <th scope="col">yazı2</th>
+                                <th scope="col">yazı3</th>
+                                <th scope="col">yazı4</th>
+                                <th scope="col">kuruluşimg</th>
+                                <th scope="col">kuruluşunadı</th>
+                                <th scope="col">kuruluşyazı1</th>
+                                <th scope="col">kuruluşyazı2</th>
+                                <th scope="col">kuruluşyazı3</th>
+                                <th scope="col">kuruluşamacıp1</th>
+                                <th scope="col">kuruluşamacıp2</th>
+                                <th scope="col">kuruluşamacıyazı1</th>
+                                <th scope="col">kuruluşamacıyazı2</th>
+                                <th scope="col">kuruluşamacıyazı3</th>
+                                <th scope="col">kuruluşamacıyazı4</th>
+                                <th scope="col">kuruluşamacıyazı5</th>
+                                <th scope="col">kuruluşamacıyazı6</th>
+                                <th scope="col">kuruluşamacıyazı7</th>
+                                <th scope="col">kuruluşamacıyazı8</th>
+                                <th scope="col">kuruluşamacıyazı9</th>
+                                <th scope="col">kuruluşamacıyazı10</th>
+                                <th scope="col">kuruluşamacıyazı11</th>
+                                <th scope="col">Sil</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.hakkındas)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td><img width="60" height="60" src="/img/@item.kurucuresmi" /></td>
+                                    <td>@Html.Raw(item.yazı1)</td>
+                                    <td>@Html.Raw(item.yazı2)</td>
+                                    <td>@Html.Raw(item.yazı3)</td>
+                                    <td>@Html.Raw(item.yazı4)</td>
+                                    <td><img width="60" height="60" src="/img/@item.kuruluşimg" /></td>
+                                    <td>@Html.Raw(item.kuruluşunadı)</td>
+                                    <td>@Html.Raw(item.kuruluşyazı1)</td>
+                                    <td>@Html.Raw(item.kuruluşyazı2)</td>
+                                    <td>@Html.Raw(item.kuruluşyazı3)</td>
+                                    <td>@Html.Raw(item.kuruluşamacıp1)</td>
+                                    <td>@Html.Raw(item.kuruluşamacıp2)</td>
+                                    <td>@Html.Raw(item.kuruluşamacıyazı1)</td>
+                                    <td>@Html.Raw(item.kuruluşamacıyazı2)</td>
+                                    <td>@Html.Raw(item.kuruluşamacıyazı3)</td>
+                                    <td>@Html.Raw(item.kuruluşamacıyazı4)</td>
+                                    <td>@Html.Raw(item.kuruluşamacıyazı5)</td>
+                                    <td>@Html.Raw(item.kuruluşamacıyazı6)</td>
+                                    <td>@Html.Raw(item.kuruluşamacıyazı7)</td>
+                                    <td>@Html.Raw(item.kuruluşamacıyazı8)</td>
+                                    <td>@Html.Raw(item.kuruluşamacıyazı9)</td>
+                                    <td>@Html.Raw(item.kuruluşamacıyazı10)</td>
+                                    <td>@Html.Raw(item.kuruluşamacıyazı11)</td>
+                                    <td><a class="btn btn-danger btn-sm" href="~/Admin/AdminPaneli/Sil3/@item.Id">Sil</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            @if (TempData["boş4"] != null)
+            {
+                <h2>Hizmetler İçerik</h2>
+                <div class="table-responsive">
+
+                    <table class="table table-hover mx-auto text-center table-dark">
+                        <thead class="text-white-50 text-opacity-100">
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">İhbarlarp1</th>
+                                <th scope="col">İhbarlarp2</th>
+                                <th scope="col">Sağlıkp1</th>
+                                <th scope="col">Sağlıkp2</th>
+                                <th scope="col">Sağlıkp3</th>
+                                <th scope="col">Sağlıkimg1</th>
+                                <th scope="col">Sağlıkimg2</th>
+                                <th scope="col">Kısırlaştırmap1</th>
+                                <th scope="col">Kısırlaştırmap2</th>
+                                <th scope="col">Kısırlaştırmap3</th>
+                                <th scope="col">Kısırlaştırmap4</th>
+                                <th scope="col">Kısırlaştırmap5</th>
+                                <th scope="col">Kısırlaştırmap6</th>
+                                <th scope="col">Kısırlaştırmap7</th>
+                                <th scope="col">Kısırlaştırmaimg1</th>
+                                <th scope="col">Kısırlaştırmaimg2</th>
+                                <th scope="col">Şiddetp1</th>
+                                <th scope="col">Şiddetp2</th>
+                                <th scope="col">Şiddetp3</th>
+                                <th scope="col">Şiddetp4</th>
+                                <th scope="col">Eğitimp1</th>
+                                <th scope="col">Donörimg1</th>
+                                <th scope="col">Donörp1</th>
+                                <th scope="col">Sponsorimg1</th>
+                                <th scope="col">Sponsorp1</th>
+                                <th scope="col">Sil</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.hizmetlers)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@Html.Raw(item.ihbarp1)</td>
+                                    <td>@Html.Raw(item.ihbarp2)</td>
+                                    <td>@Html.Raw(item.sağlıkp1)</td>
+                                    <td>@Html.Raw(item.sağlıkp2)</td>
+                                    <td>@Html.Raw(item.sağlıkp3)</td>
+                                    <td><img width="60" height="60" src="/img/@item.sağlıkimg1" /></td>
+                                    <td><img width="60" height="60" src="/img/@item.sağlıkimg2" /></td>
+                                    <td>@Html.Raw(item.kısırlaştırmap1)</td>
+                                    <td>@Html.Raw(item.kısırlaştırmap2)</td>
+                                    <td>@Html.Raw(item.kısırlaştırmap3)</td>
+                                    <td>@Html.Raw(item.kısırlaştırmap4)</td>
+                                    <td>@Html.Raw(item.kısırlaştırmap5)</td>
+                                    <td>@Html.Raw(item.kısırlaştırmap6)</td>
+                                    <td>@Html.Raw(item.kısırlaştırmap7)</td>
+                                    <td><img width="60" height="60" src="/img/@item.kısırlaştırmaimg1" /></td>
+                                    <td><img width="60" height="60" src="/img/@item.kısırlaştırmaimg2" /></td>
+                                    <td>@Html.Raw(item.şiddetp1)</td>
+                                    <td>@Html.Raw(item.şiddetp2)</td>
+                                    <td>@Html.Raw(item.şiddetp3)</td>
+                                    <td>@Html.Raw(item.şiddetp4)</td>
+                                    <td>@Html.Raw(item.eğitimp1)</td>
+                                    <td><img width="60" height="60" src="/img/@item.donörimg1" /></td>
+                                    <td>@Html.Raw(item.donörp1)</td>
+                                    <td><img width="60" height="60" src="/img/@item.sponsorimg1" /></td>
+                                    <td>@Html.Raw(item.sponsorp1)</td>
+                                    <td><a class="btn btn-danger btn-sm" href="~/Admin/AdminPaneli/Sil4/@item.Id">Sil</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            @if (TempData["boş5"] != null)
+            {
+                 <h2>Mesajlar</h2>
+                 <div class="table-responsive">
+                    <table class="table table-hover mx-auto text-center table-dark">
+                        <thead class="text-white-50 text-opacity-100">
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Ad</th>
+                                <th scope="col">Soyad</th>
+                                <th scope="col">E-mail</th>
+                                <th scope="col">Konu</th>
+                                <th scope="col">Cevapla</th>
+                                <th scope="col">Sil</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.mails)
+                            {
+                                <tr>
+                                    <td scope="row">@item.Id</td>
+                                    <td>@item.Adi</td>
+                                    <td>@item.Soyadi</td>
+                                    <td>@item.Email</td>
+                                    <td>@item.Konu</td>
+                                    <td><a class="btn btn-success btn-sm" href="~/Admin/AdminPaneli/Mesajlar/@item.Id">Cevapla</a></td>
+                                    <td><a class="btn btn-danger btn-sm" href="~/Admin/AdminPaneli/Sil5/@item.Id">Sil</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                 </div>
+            }
+            @if (TempData["boş6"] != null)
+            {
+                <h2>İletişim İçerik</h2>
+                <div class="table-responsive">
+
+                    <table class="table table-hover mx-auto text-center table-dark">
+                        <thead class="text-white-50 text-opacity-100">
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Adres</th>
+                                <th scope="col">Telefon</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Facebook</th>
+                                <th scope="col">İnstagram</th>
+                                <th scope="col">Twitter</th>
+                                <th scope="col">Youtube</th>
+                                <th scope="col">Sil</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.iletişims)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@Html.Raw(item.Adres)</td>
+                                    <td>@Html.Raw(item.Email)</td>
+                                    <td>@item.Facebook</td>
+                                    <td>@item.İnstagram</td>
+                                    <td>@item.Tweater</td>
+                                    <td>@item.Youtube</td>
+                                    <td><a class="btn btn-danger btn-sm" href="~/Admin/AdminPaneli/Sil6/@item.Id">Sil</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            @if (TempData["boş7"] != null)
+            {
+                <h2>Ödeme İçerik</h2>
+                <div class="table-responsive">
+
+                    <table class="table table-hover mx-auto text-center table-dark">
+                        <thead class="text-white-50 text-opacity-100">
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Bnak Adı</th>
+                                <th scope="col">Banka Şubesi</th>
+                                <th scope="col">Banka hesabının Şehiri</th>
+                                <th scope="col">TL İban</th>
+                                <th scope="col">USD İban</th>
+                                <th scope="col">EURO İban</th>
+                                <th scope="col">Sil</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.ödemes)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@item.BankaAd</td>
+                                    <td>@item.BankaŞube</td>
+                                    <td>@item.BankaŞehir</td>
+                                    <td>@item.TL</td>
+                                    <td>@item.USD</td>
+                                    <td>@item.EURO</td>
+                                    <td><a class="btn btn-danger btn-sm" href="~/Admin/AdminPaneli/Sil7/@item.Id">Sil</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            @if (TempData["boş8"] != null)
+            {
+                <h2>Galeri İçerik</h2>
+                <div class="table-responsive">
+
+                    <table class="table table-hover mx-auto text-center table-dark">
+                        <thead class="text-white-50 text-opacity-100">
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Resimler</th>
+                                <th scope="col">Sil</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.galeris)
+                            {
+                                <tr>
+                                    <th>@item.Id</th>
+                                    <th><img width="60" height="60" src="/img/Galeri/@item.Resimler" /></th>
+                                    <th><a class="btn btn-danger btn-sm" href="~/Admin/AdminPaneli/Sil8/@item.Id">Sil</a></th>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            @if (TempData["boş9"] != null)
+            {
+                <h2>Yuvamız İçerik</h2>
+                <div class="table-responsive">
+
+                    <table class="table table-hover mx-auto text-center table-dark">
+                        <thead class="text-white-50 text-opacity-100">
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Yuva İsim</th>
+                                <th scope="col">Yuva Resim</th>
+                                <th scope="col">Yuva Cinsi</th>
+                                <th scope="col">Yuva Cinsiyeti</th>
+                                <th scope="col">Yuva Yaşı</th>
+                                <th scope="col">Yuva Rengi</th>
+                                <th scope="col">Yuva Hikayesi</th>
+                                <th scope="col">Güncelle</th>
+                                <th scope="col">Sil</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.yuvamızs)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@item.Yuvaİsim</td>
+                                    <td><img width="60" height="60" src="/img/Yuvamız/@item.YuvaResim"/></td>
+                                    <td>@item.YuvaCinsi</td>
+                                    <td>@item.YuvaCinsiyeti</td>
+                                    <td>@item.YuvaYaşı</td>
+                                    <td>@item.YuvaRengi</td>
+                                    <td>@Html.Raw(item.YuvaHikaye)</td>
+                                    <td><a class="btn btn-primary btn-sm" href="~/Admin/AdminPaneli/güncelle6/@item.Id">Güncelle</a></td>
+                                    <td><a class="btn btn-danger btn-sm" href="~/Admin/AdminPaneli/Sil9/@item.Id">Sil</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<script src="~/js/adminpaneli.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>

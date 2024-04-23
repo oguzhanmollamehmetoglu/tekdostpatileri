@@ -1,0 +1,59 @@
+﻿@using tekdostpatileri.Models;
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+@{
+    TekDostPatileriDbContext db = new TekDostPatileriDbContext();
+    var logovarmı = db.logos.FirstOrDefault();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="~/css/yapımcı.css" type="text/css" rel="stylesheet" />
+    @if (logovarmı != null)
+    {
+        <link rel="shortcut icon" href="~/icon/@logovarmı.LogoUrl" type="image/vnd.microsoft.icon" />
+    }
+    <title>TekDostPatileri | Yapımcı</title>
+</head>
+<body>
+    <div class="sidenav">
+        <div class="login-main-text">
+            <div class="sidenav">
+                <div class="login-main-text">
+                    <img src="~/img/IAM.jpg" />
+                    <h2>Tek Dost Patileri<br>Yapımcısı</h2>
+                    <p>
+                        Bu web sitesini,<br/>kuzenimin başlattığı hayvanlarına yönelik proje kapsamında, web sitesi yapımı başlamış ve başarıyla tamamlanmıştır.
+                        <br/> Şimdi, bu web sitesini daha da geliştirmek ve daha kapsamlı hizmetler sunmak amacıyla çalışmalarımıza devam ediyoruz.
+                        <br/>Bu süreçte güzel bir deneyim yaşadık ve web sitesi, hayvanseverler için değerli içeriklerle dolu bir kaynak haline geldi.
+                        <br/> Gelecekte, siteyi daha da zenginleştirerek hayvanseverler için daha kullanışlı hale getirmeyi planlıyoruz.
+                    </p>
+                    <p>Projemiz, hayvan dostlarımıza dair faydalı içerikleri sunmak amacıyla tasarlanmıştır.
+                        <br/>Bu süreçte elde ettiğimiz deneyimlerle, gelecekteki aşamalarda daha<br/> etkileyici ve bilgi dolu bir platform sunmayı hedefliyoruz.
+                    </p>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-b text-center">
+                    <h6>İletişim</h6>
+                    <div class="social-icons">
+                        <a href="https://instagram.com/oguzhanmollamehmetoglu?igshid=NGExMmI2YTkyZg==" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/Oguzhan_MMO?t=Gtog3LJ3sAGWHTI5j1DVFA&s=08" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.youtube.com/channel/UCxr0LcQxg1AVHA3VcItPfVw" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/in/o%C4%9Fuzhan-mollamehmeto%C4%9Flu-ab413823b" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	TekDostPatileriDbContext db = new TekDostPatileriDbContext();
+	var galeriiçerik = db.galeris.FirstOrDefault();
+}
+@model List<tekdostpatileri.Models.Galeri>
+@section başlık{
+      TekDostPatileri | Galeri
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="~/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+<body>
+	<section class="there-section">
+		<div class="picture">
+			<img src="~/img/r4.png">
+		</div>
+	</section>
+	@if (galeriiçerik != null) {
+		<section class="galeri-section">
+			<div class="content-t"><h3 class="content-title text-center"><b>Galeri</b></h3></div>
+			<div class="container section-q">
+				<div class="tz-gallery">
+					<div class="row">
+						@foreach(var değer in Model){
+						<div class="col-sm-6 col-md-4">
+							<a class="lightbox">
+								<img src="~/img/Galeri/@değer.Resimler" alt="yuvamizdan-tebessum-ettiren-kareler">
+							</a>
+						</div>
+						}
+					</div>
+				</div>
+			</div>
+		</section>
+	}
+	<script type="text/javascript" src="~/js/script.js"></script>
+	<script type="text/javascript" src="~/js/navbar.js"></script>
+</body>
+</html>

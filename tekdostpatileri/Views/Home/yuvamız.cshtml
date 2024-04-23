@@ -1,0 +1,54 @@
+﻿@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	TekDostPatileriDbContext db = new TekDostPatileriDbContext();
+	var yuvaiçerik = db.yuvamızs.FirstOrDefault();
+}
+@model List<tekdostpatileri.Models.Yuvamız>
+@section başlık{
+     TekDostPatileri | Yuvamız
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="~/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+<body>
+	<section class="there-section">
+		<div class="picture">
+			<img src="~/img/r5.png">
+		</div>
+	</section>
+	@if(yuvaiçerik != null)
+	{
+	<section class="family-section">
+		<div class="content-b"><h3 class="content-title text-center"><b>Yuvamız</b></h3></div>
+		<div class="container p-0 ">
+			<div class="tab-content">
+				<div class="tab-pane active">
+					<div class="row mobile-flex-wrap">
+						@foreach(var değer in Model){
+						<div class="card p-0 my-3 col-md-4 red-border mobile-center" id="cankard">
+							<img class="card-img-top" src="~/img/Yuvamız/@değer.YuvaResim" alt="Card image">
+							<div class="card-body text-center">
+								<h4 class="card-title text-danger"><b>@değer.Yuvaİsim</b></h4>
+								<p class="card-text"></p>
+								<p>@Html.Raw(değer.YuvaHikaye.Substring(0,değer.YuvaHikaye.Substring(0,20).LastIndexOf(" ")))...</p>
+								<a href="/Home/yuva1/@değer.Id" class="btn btn-danger">@değer.Yuvaİsim ile tanış</a>
+							</div>
+						</div>
+							}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	}
+	<script type="text/javascript" src="~/js/script.js"></script>
+	<script type="text/javascript" src="~/js/navbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+.navigation-d .navigation-list-d .navigation-item-d .navigation-link-d{
+	display: block;
+	font-size: 1rem;
+	transition: 0.5s;
+	color: gray;
+	font-weight: 500;
+}
+
+.navigation-d .navigation-list-d .navigation-item-d:hover
+ .navigation-link-d{
+	color: darkred;
+	font-weight: 800;
+	text-shadow: 0px 4px 4px rgba(0, 0, 0,0.25);
+}
+
+.nav-f {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+.nav-f dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.nav-f ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+.nav-f li {
+    display: list-item;
+}
+
+
+
+@media screen and (min-width: 1024px) {
+     
+    .navigation-d .navigation-list-d{
+         display: flex;
+         align-items: center;
+         flex-wrap: wrap;
+         margin-left: -15px;
+         margin-right: -15px;
+     }
+
+    .navigation-d .navigation-list-d .navigation-item-d{
+    	padding-left: 15px;
+    	padding-right: 15px;
+    }
+
+    .navigation-d{
+        margin-left: 70px;
+        margin-top: 10px;
+    }
+
+    .mobile-nav{
+    display: none;
+    }
+}
+
+
+/*mobil navbar*/
+
+.mobile-container {
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+  color: black;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: antiquewhite;
+  color: black;
+  position: relative;
+}
+
+.topnav #myLinks {
+  display: none;
+}
+
+.topnav a {
+  color: black;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+.topnav a.icon {
+  background: antiquewhite;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.topnav img {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.topnav img.icon {
+  background: antiquewhite;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.topnav a:hover {
+  color: darkred;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0,0.25);
+}
+
+.topnav .active {
+  background-color: antiquewhite;
+  color: black;
+}
+
+.navbar-language{
+    display: inline-block;
+}

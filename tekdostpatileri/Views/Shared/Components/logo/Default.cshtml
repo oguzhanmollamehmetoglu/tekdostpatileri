@@ -1,0 +1,10 @@
+﻿@using tekdostpatileri.Models;
+@{
+    TekDostPatileriDbContext db = new TekDostPatileriDbContext();
+    var logovarmı = db.logos.FirstOrDefault();
+}
+@if(logovarmı != null)
+{
+    <img src="~/icon/@logovarmı.LogoUrl" alt="icon">
+}
+

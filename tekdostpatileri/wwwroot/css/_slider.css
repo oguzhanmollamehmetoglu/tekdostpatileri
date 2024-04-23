@@ -1,0 +1,114 @@
+.slider{
+	position: relative;
+	width: auto;
+	height: 605px;
+	overflow: hidden;
+}
+.sliders {
+	position: relative;
+	width: auto;
+	height: 605px;
+	overflow: hidden;
+}
+
+.slide{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: opacity .4s linear;
+}
+
+.active{
+	opacity: 1;
+}
+
+.slide .inner{
+	position: absolute;
+	bottom: 50px;
+	left: 50px;
+	padding: 20px 30px;
+	background-color: rgb(0, 0, 0,.8);
+	color: #eee;
+	opacity: 0;
+}
+
+.slide .inner p{
+	max-width: 400px;
+}
+
+.slide.active .inner{
+	opacity: 1;
+}
+
+.slide:nth-child(1) {background: no-repeat center/cover}
+.slide:nth-child(2) {background: no-repeat center/cover}
+.slide:nth-child(3) {background: no-repeat center/cover}
+.slide:nth-child(4) {background: no-repeat center/cover}
+.slide:nth-child(5) {background: no-repeat center/cover}
+
+.indicators{
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	cursor: default;
+}
+
+.indicators button {
+	padding: 10px 20px;
+	font-size: 25px;
+	float: left;
+	margin-right: 2px;
+	background-color: rgb(0, 0, 0,.8);
+	color: #eee;
+}
+
+.indicators button:hover{
+	background-color: darkred;
+}
+
+@media screen and (max-width:1024px){
+	.slider{
+	position: relative;
+	width: 100%;
+	height: 300px;
+	overflow: hidden;
+}
+	.sliders {
+		position: relative;
+		width: 100%;
+		height: 300px;
+		overflow: hidden;
+	}
+	.slide .inner {
+		display: none;
+	}
+.indicators{
+	display: none;
+}
+}
+@media screen and (max-width:756px) {
+	.slider {
+		position: relative;
+		width: 100%;
+		height: 200px;
+		overflow: hidden;
+	}
+
+	.sliders {
+		position: relative;
+		width: 100%;
+		height: 200px;
+		overflow: hidden;
+	}
+
+	.slide .inner {
+		display: none;
+	}
+
+	.indicators {
+		display: none;
+	}
+}

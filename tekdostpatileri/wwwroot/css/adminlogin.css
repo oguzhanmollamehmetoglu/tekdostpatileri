@@ -1,0 +1,104 @@
+﻿body {
+    font-family: "Lato", sans-serif;
+    background-color:antiquewhite;
+}
+
+.main-head {
+    height: 150px;
+}
+
+.sidenav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: darkred;
+    overflow-x: hidden;
+}
+    .sidenav img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .sidenav h2, .sidenav p {
+        text-align: center;
+    }
+
+.main {
+    padding: 3px 10px;
+}
+
+@media screen and (min-height: 450px) {
+    .sidenav img{
+        padding-top: 40px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .login-form {
+        margin-top: 10%;
+    }
+
+    .register-form {
+        margin-top: 10%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .main {
+        margin-left: 40%;
+    }
+
+    .sidenav {
+        width: 40%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+    }
+
+    .login-form {
+        margin-top: 80%;
+    }
+
+    .register-form {
+        margin-top: 20%;
+    }
+}
+
+.login-main-text {
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 90px;
+    color: antiquewhite;
+}
+
+    .login-main-text h2 {
+        font-weight: 300;
+    }
+
+#bgb {
+    background-color: darkred;
+    color: #fff;
+    transition: color 0.3s, transform 0.3s;
+}
+
+    #bgb:hover {
+        color: burlywood;
+        transform: scale(1.1);
+    }
+
+.form-control {
+    background-color: navajowhite;
+    border: 1px solid;
+    color: gray;
+}
+
+    .form-control:focus {
+        background-color: wheat;
+        border-color: darkred;
+        outline-width: 1px;
+        outline-style: solid;
+    }

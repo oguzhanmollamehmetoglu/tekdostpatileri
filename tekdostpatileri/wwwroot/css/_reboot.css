@@ -1,0 +1,58 @@
+*{
+	outline: none;
+	box-sizing: border-box;
+}
+
+html, body,ul,ol{
+	padding: 0px;
+	margin: 0px;
+}
+
+body{
+	font-family: 'Montserrat',sans-serif;
+}
+
+ul,ul{
+	list-style: none;
+}
+
+button{
+	background-color: transparent;
+	border: none;
+}
+
+a{
+	display: inline-block;
+	text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+	margin: 0px;
+}
+
+figure{
+	margin: 0px;
+}
+
+table {
+	display: table;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-collapse: collapse;
+}
+
+@media screen and (max-width:1024px){
+	body{
+   	font-size: 0.9rem;
+   }
+   .section-q{
+   	 text-align: center;
+   	 padding-left: 15px;
+   	 padding-right: 15px;
+   }
+   .mobile-p{
+   	 padding-left: 15px;
+   	 padding-right: 15px;
+   }
+
+}

@@ -1,0 +1,39 @@
+﻿@using tekdostpatileri.Models;
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@model ViewModel
+@section başlık{
+      TekDostPatileri
+}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="~/css/adminpanel.css" type="text/css" rel="stylesheet" />
+
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="row" id="main">
+        <div class="col-sm-12 col-md-12 well" id="content">
+            @if (TempData["Hatal"] != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @TempData["Hatal"]
+                </div>
+            }
+            <form asp-area="Admin" asp-controller="AdminPaneli" asp-action="logo" enctype="multipart/form-data" method="post">
+                <h2 class="text-center lead"> Resim Yükle</h2>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Resim Bilgileri:<br /><span style="color:darkred">"Resim boyutu 150x150 olmalıdır."</span></label>
+                    <input type="file" name="LogoUrl" class="form-control" />
+                </div>
+                <div class="form-group text-left">
+                    <input type="submit" class="btn btn-success btn-sm w-25" value="Resim Yükle" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+<script src="~/js/adminpanel.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>

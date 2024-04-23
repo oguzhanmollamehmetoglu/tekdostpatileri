@@ -1,0 +1,57 @@
+﻿@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	TekDostPatileriDbContext db = new TekDostPatileriDbContext();
+	var yuvaiçerik = db.yuvamızs.FirstOrDefault();
+}
+@model tekdostpatileri.Models.Yuvamız
+@section başlık{
+     TekDostPatileri | Yuvamız
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="~/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+<body>
+	@if(yuvaiçerik != null)
+	{
+	<section class="family-section section-q-2">
+		<div class="container my-5 px-5 ">
+			<div class="row text-center box">
+				<div class="col-md-5">
+					<div class="card mt-2 text-center red-border">
+						<img class="card-img-top" src="~/img/Yuvamız/@Model.YuvaResim" alt="Card image cap">
+						<div class="card-body p-0 py-4">
+							<h5 class="card-title"><b>Onun Adı:</b> <b class="text-danger">@Model.Yuvaİsim</b></h5>
+							<p class="card-text ">
+								<br>Cinsi: @Model.YuvaCinsi<br>
+								    Yaşı: @Model.YuvaYaşı<br>
+								    Rengi: @Model.YuvaRengi<br>
+								    Cinsiyeti: @Model.YuvaCinsiyeti<br>
+								<b class="text-danger">Desteğinize İhtiyacı Var!</b><br>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row my-5">
+				<div class="col-md-1"></div>
+				<div class="col-md-10">
+					<p>&nbsp;</p>
+					<p>@Html.Raw(Model.YuvaHikaye)</p>
+					<p>&nbsp;</p>
+				</div>
+				<div class="col-md-1"></div>
+			</div>
+		</div>
+	</section>
+	}
+	<script type="text/javascript" src="~/js/script.js"></script>
+	<script type="text/javascript" src="~/js/navbar.js"></script>
+</body>
+</html>

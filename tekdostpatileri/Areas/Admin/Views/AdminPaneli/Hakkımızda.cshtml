@@ -1,0 +1,128 @@
+﻿@using Microsoft.AspNetCore.Http
+@using tekdostpatileri.Models;
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@model ViewModel
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@section başlık{
+      TekDostPatileri
+}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="~/css/adminpanel.css" type="text/css" rel="stylesheet" />
+
+<div class="container-fluid">
+    <div class="row" id="main">
+        <div class="col-sm-12 col-md-12 well" id="content">
+            @if (TempData["HataH"] != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @TempData["HataH"]
+                </div>
+            }
+            <form method="post" enctype="multipart/form-data" asp-controller="AdminPaneli" asp-action="Hakkımızda">
+             
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Yazı1:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="yazı1" name="yazı1" id="yazı1"></textarea>
+                </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Yazı2:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="yazı2" name="yazı2" id="yazı2"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Yazı3:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="yazı3" name="yazı3" id="yazı3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Yazı4:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="yazı4" name="yazı4" id="yazı4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Kurucuresmi:</label>
+                    <input type="file" name="kurucuresmi" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Kuruluşunadı:</label>
+                    <input type="text" class="form-control" item="kuruluşunadı" name="kuruluşunadı" id="kuruluşunadı">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Kuruluşyazı1:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="kuruluşyazı1" name="kuruluşyazı1" id="kuruluşyazı1"></textarea>
+                </div>
+                 <div class="form-group">
+                    <label for="exampleInputPassword1">Kuruluşyazı2:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="kuruluşyazı2" name="kuruluşyazı2" id="kuruluşyazı2"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Kuruluşyazı3:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="kuruluşyazı3" name="kuruluşyazı3" id="kuruluşyazı3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Kuruluşimg:</label>
+                    <input type="file" name="kuruluşimg" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Kuruluşamacıp1:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="kuruluşamacıp1" name="kuruluşamacıp1" id="kuruluşamacıp1"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Kuruluşamacıp2:</label>
+                    <input type="text" class="form-control" item="kuruluşamacıp2" name="kuruluşamacıp2" id="kuruluşamacıp2">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Kuruluşamacıyazı1:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="kuruluşamacıyazı1" name="kuruluşamacıyazı1" id="kuruluşamacıyazı1"></textarea>
+                </div>
+                 <div class="form-group">
+                    <label for="exampleInputPassword1">Kuruluşamacıyazı2:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="kuruluşamacıyazı2" name="kuruluşamacıyazı2" id="kuruluşamacıyazı2"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Kuruluşamacıyazı3:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="kuruluşamacıyazı3" name="kuruluşamacıyazı3" id="kuruluşamacıyazı3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Kuruluşamacıyazı4:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="kuruluşamacıyazı4" name="kuruluşamacıyazı4" id="kuruluşamacıyazı4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Kuruluşamacıyazı5:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="kuruluşamacıyazı5" name="kuruluşamacıyazı5" id="kuruluşamacıyazı5"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Kuruluşamacıyazı6:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="kuruluşamacıyazı6" name="kuruluşamacıyazı6" id="kuruluşamacıyazı6"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Kuruluşamacıyazı7:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="kuruluşamacıyazı7" name="kuruluşamacıyazı7" id="kuruluşamacıyazı7"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Kuruluşamacıyazı8:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="kuruluşamacıyazı8" name="kuruluşamacıyazı8" id="kuruluşamacıyazı8"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Kuruluşamacıyazı9:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="kuruluşamacıyazı9" name="kuruluşamacıyazı9" id="kuruluşamacıyazı9"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Kuruluşamacıyazı10:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="kuruluşamacıyazı10" name="kuruluşamacıyazı10" id="kuruluşamacıyazı10"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Kuruluşamacıyazı11:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="kuruluşamacıyazı11" name="kuruluşamacıyazı11" id="kuruluşamacıyazı11"></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Ekle</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="~/ckeditor5-build-classic-40.0.0/ckeditor5-build-classic/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/44.0.0/classic/ckeditor.js"></script>
+<script src="~/js/CKedit.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="~/js/adminpaneli.js"></script>

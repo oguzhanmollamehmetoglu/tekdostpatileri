@@ -1,0 +1,58 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@section başlık{
+      TekDostPatileri
+}
+@model tekdostpatileri.Models.Mail
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="~/css/AdminPanel.css" type="text/css" rel="stylesheet" />
+
+<div class="container-fluid">
+    <div class="row" id="main">
+        <div class="col-sm-12 col-md-12 well" id="content">
+            <h1>MESAJ BÖLÜMÜ</h1>
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">Id:</th>
+                        <td scope="col">@Model.Id</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Ad:</th>
+                        <td scope="col">@Model.Adi</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Soyad:<br /></th>
+                        <td scope="col">@Model.Soyadi</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">E-Mail:</th>
+                        <td scope="col">@Model.Email</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Konu:</th>
+                        <td scope="col">@Model.Konu</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Mesaj:</th>
+                        <td scope="col">@Model.Mesaj</td>
+                    </tr>
+                </tbody>
+            </table>
+            <form method="post" asp-controller="AdminPaneli" asp-action="Mesajlar">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Cevap:</label>
+                    <textarea style="min-height:200px; max-width:1000px; resize:none;" type="text" class="form-control" id="cevap" name="Cevaplar" aria-describedby="emailHelp"></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Gönder</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/AdminPanel.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>

@@ -1,0 +1,74 @@
+﻿@using Microsoft.AspNetCore.Http
+@using tekdostpatileri.Models;
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@model tekdostpatileri.Models.Ödeme
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@section başlık{
+      TekDostPatileri
+}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="~/css/adminpanel.css" type="text/css" rel="stylesheet" />
+
+<div class="container-fluid">
+    <div class="row" id="main">
+        <div class="col-sm-12 col-md-12 well" id="content">
+            @if (TempData["HataÖ"] != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @TempData["HataÖ"]
+                </div>
+            }
+            <form method="post" enctype="multipart/form-data" asp-controller="AdminPaneli" asp-action="güncelle5">
+                <div class="form-group">
+                    <label for="exampleInputPassword1">BankaAdı:</label>
+                    <input type="text" class="form-control" item="BankaAd" name="BankaAd" id="BankaAd" value=" @if (TempData["HataÖ"] == null)
+                    {
+                        @Model.BankaAd
+                    }">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">BankaŞubesi:</label>
+                    <input type="text" class="form-control" item="BankaŞube" name="BankaŞube" id="BankaŞube" value=" @if (TempData["HataÖ"] == null)
+                    {
+                        @Model.BankaŞube
+                    }">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Banka Hesabının Bulunduğu Şehir:</label>
+                    <input type="text" class="form-control" item="BankaŞehir" name="BankaŞehir" id="BankaŞehir" value=" @if (TempData["HataÖ"] == null)
+                    {
+                        @Model.BankaŞehir
+                    }">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">TL İban:</label>
+                    <input type="text" class="form-control" item="TL" name="TL" id="TL" value=" @if (TempData["HataÖ"] == null)
+                    {
+                        @Model.TL
+                    }">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">USD İban:</label>
+                    <input type="text" class="form-control" item="USD" name="USD" id="USD" value=" @if (TempData["HataÖ"] == null)
+                    {
+                        @Model.USD
+                    }">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">EURO İban:</label>
+                    <input type="text" class="form-control" item="EURO" name="EURO" id="EURO" value=" @if (TempData["HataÖ"] == null)
+                    {
+                        @Model.EURO
+                    }">
+                </div>
+                <button type="submit" class="btn btn-primary">Güncelle</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/adminpaneli.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>

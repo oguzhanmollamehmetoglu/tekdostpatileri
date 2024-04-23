@@ -1,0 +1,96 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    TekDostPatileriDbContext db = new TekDostPatileriDbContext();
+    var hakkındaiçerik = db.hakkındas.FirstOrDefault();
+}
+@model ViewModel
+@section başlık{
+      TekDostPatileri | Hakkımızda
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="~/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+<body>
+    <section class="there-section">
+        <div class="picture">
+            <img src="~/img/r5.png">
+        </div>
+    </section>
+     @if (hakkındaiçerik != null)
+    {
+        <section class="detailinfo-section section-q">
+            <div class="container mobile-flex-wrap">
+            <div class="row">
+                <div class="column detailinfo bg-white px-0">
+                    <div class="detailinfo-t px-3">
+                        <h2 class="detailinfo-title text-white mobile-center"><b>HAKKIMIZDA</b></h2>
+                    </div>
+                    <div class="nav-h flex-column">
+                        <ul class="nav-ul">
+                            <li class="nav-link active"><a href="#v-pills-1">Çalışma Gurubundan Bildiriler</a></li>
+                            <li class="nav-link"><a href="#v-pills-2">Kuruluşumuz</a></li>
+                            <li class="nav-link"><a href="#v-pills-3">Amaçlarımız</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 c bg-white detailinfo-data">
+                    <div class="tab-content">
+                        <div id="v-pills-1" class="tab-pane active">
+                            <h3 class="mt-3 text-danger"><b>Çalışma Gurubundan Bildiriler</b></h3><hr>
+                            <div id="the-red-one" class="text-left">
+                                <p><img alt="" class="ig1" src="~/img/@hakkındaiçerik.kurucuresmi"></p>
+                                <p>@Html.Raw(hakkındaiçerik.yazı1)</p>
+                                <p>@Html.Raw(hakkındaiçerik.yazı2)</p>
+                                <p>@Html.Raw(hakkındaiçerik.yazı3)</p>
+                                <p>@Html.Raw(hakkındaiçerik.yazı4)</p>
+                                <p>&nbsp;</p>
+                            </div>
+                        </div>
+                        <div id="v-pills-2" class="tab-pane">
+                            <h3 class="mt-3 text-danger"><b>Kuruluşumuz</b></h3><hr>
+                            <div id="the-red-one" class="text-left">
+                                <p><img alt="" class="ig1" src="~/img/@hakkındaiçerik.kuruluşimg" ></p>
+                                <p>@Html.Raw(hakkındaiçerik.kuruluşunadı)</p>
+                                <p>@Html.Raw(hakkındaiçerik.kuruluşyazı1)</p>
+                                <p>@Html.Raw(hakkındaiçerik.kuruluşyazı2)</p>
+                                <p>@Html.Raw(hakkındaiçerik.kuruluşyazı3)</p>
+                                <p>&nbsp;</p>
+                            </div>
+                        </div>
+                        <div id="v-pills-3" class="tab-pane">
+                            <h3 class="mt-3 text-danger"><b>Amaçlarımız</b></h3><hr>
+                            <div id="the-red-one" class="text-left">
+                                <p>@Html.Raw(hakkındaiçerik.kuruluşamacıp1)</p>
+                                <p>@Html.Raw(hakkındaiçerik.kuruluşamacıp2) &nbsp;</p>
+                                    <p><img class="ig1" alt="" src="~/img/arrow.png" style="height:30px; width:30px">@Html.Raw(hakkındaiçerik.kuruluşamacıyazı1) &nbsp;</p>
+                                    <p><img class="ig1" alt="" src="~/img/arrow.png" style="height:30px; width:30px">@Html.Raw(hakkındaiçerik.kuruluşamacıyazı2) &nbsp;</p>
+                                    <p><img class="ig1" alt="" src="~/img/arrow.png" style="height:30px; width:30px">@Html.Raw(hakkındaiçerik.kuruluşamacıyazı3) &nbsp;</p>
+                                    <p><img class="ig1" alt="" src="~/img/arrow.png" style="height:30px; width:30px">@Html.Raw(hakkındaiçerik.kuruluşamacıyazı4) &nbsp;</p>
+                                    <p><img class="ig1" alt="" src="~/img/arrow.png" style="height:30px; width:30px">@Html.Raw(hakkındaiçerik.kuruluşamacıyazı5) &nbsp;</p>
+                                    <p><img class="ig1" alt="" src="~/img/arrow.png" style="height:30px; width:30px">@Html.Raw(hakkındaiçerik.kuruluşamacıyazı6) &nbsp;</p>
+                                    <p><img class="ig1" alt="" src="~/img/arrow.png" style="height:30px; width:30px">@Html.Raw(hakkındaiçerik.kuruluşamacıyazı7) &nbsp;</p>
+                                    <p><img class="ig1" alt="" src="~/img/arrow.png" style="height:30px; width:30px">@Html.Raw(hakkındaiçerik.kuruluşamacıyazı8) &nbsp;</p>
+                                    <p><img class="ig1" alt="" src="~/img/arrow.png" style="height:30px; width:30px">@Html.Raw(hakkındaiçerik.kuruluşamacıyazı9) &nbsp;</p>
+                                    <p><img class="ig1" alt="" src="~/img/arrow.png" style="height:30px; width:30px">@Html.Raw(hakkındaiçerik.kuruluşamacıyazı10)&nbsp;</p>
+                                    <p><img class="ig1" alt="" src="~/img/arrow.png" style="height:30px; width:30px">@Html.Raw(hakkındaiçerik.kuruluşamacıyazı11)&nbsp;</p>
+                                <p>&nbsp;</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    }
+    <script type="text/javascript" src="~/js/script.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="~/js/navbar.js"></script>
+</body>
+</html>

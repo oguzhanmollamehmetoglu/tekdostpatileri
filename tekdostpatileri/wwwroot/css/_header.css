@@ -1,0 +1,11 @@
+@import './_navigation.css';
+
+.header {
+	padding: 2rem 0;
+	background-color: antiquewhite;
+}
+
+.navigation-d a:hover {
+	color: darkred;
+}
+

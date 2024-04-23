@@ -1,0 +1,55 @@
+﻿@using tekdostpatileri.Models;
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+@{
+    TekDostPatileriDbContext db = new TekDostPatileriDbContext();
+    var logovarmı = db.logos.FirstOrDefault();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="~/css/adminlogin.css" type="text/css" rel="stylesheet" />
+    @if (logovarmı != null)
+    {
+        <link rel="shortcut icon" href="~/icon/@logovarmı.LogoUrl" type="image/vnd.microsoft.icon" />
+    }
+    <title>TekDostPatileri | Login</title>
+</head>
+<body>
+    <div class="sidenav">
+        <div class="login-main-text">
+            @if (logovarmı != null)
+            {
+                <img src="~/icon/@logovarmı.LogoUrl"/>
+            }
+            <h2>Tek Dost Patileri<br>Giriş Sayfası</h2>
+            <p>Giriş yaparak adminpaneline ulaşabilirsiniz.</p>
+        </div>
+    </div>
+    <div class="main">
+        <div class="col-md-6 col-sm-12">
+            <div class="login-form">
+                <form method="post" asp-area="Admin" asp-controller="Home" asp-action="Index">
+                    <div class="form-group">
+                        <label>Kullanıcı Adı</label>
+                        <input type="text" class="form-control" name="KullanıcıAdı" placeholder="User Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Şifre</label>
+                        <input type="password" class="form-control" name="Şifre" placeholder="Password">
+                    </div>
+                    <button type="submit" id="bgb" class="btn">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</body>
+</html>

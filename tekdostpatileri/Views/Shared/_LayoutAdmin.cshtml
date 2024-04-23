@@ -1,0 +1,126 @@
+﻿@using Microsoft.AspNetCore.Http
+@{
+    TekDostPatileriDbContext db = new TekDostPatileriDbContext();
+    var logovarmı = db.logos.FirstOrDefault();
+    var user = db.girişs.FirstOrDefault();
+    var hakkında = db.hakkındas.FirstOrDefault();
+    var anasayfa = db.anasayfas.FirstOrDefault();
+    var iletişim = db.iletişims.FirstOrDefault();
+    var ödeme = db.ödemes.FirstOrDefault();
+    var hizmetler = db.hizmetlers.FirstOrDefault();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="~/css/adminpanel.css" type="text/css" rel="stylesheet" />
+    @if (logovarmı != null)
+    {
+        <link rel="shortcut icon" href="~/icon/@logovarmı.LogoUrl" type="image/vnd.microsoft.icon" />
+    }
+    <title>@RenderSection("başlık")</title>
+</head>
+<body style="background-color:dimgray;">
+    <div id="throbber" style="display:none; min-height:120px ;"></div>
+    <div id="noty-holder"></div>
+    <div id="wrapper">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"> 
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kullanıcı Admin<b class="fa fa-angle-down"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a asp-controller="AdminPaneli" asp-action="çıkış"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+                    </ul>
+                </li>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <h2 class="text text-center" style="color:antiquewhite; font-size:25px;">Hoş Geldin @user.KullanıcıAdı</h2>
+                <ul class="nav navbar-nav side-nav">
+                    <li>
+                       <a class="navbar-brand" href="~/Admin/AdminPaneli/logo">
+                            @if (logovarmı != null)
+                            {
+                                <h3 class="tittle"><img src="~/icon/@logovarmı.LogoUrl" class="imglogo"/><br/>TekDostPatileri</h3>
+                            }
+                       </a>
+                    </li>
+                    <li>
+                        @if(anasayfa == null)
+                        {
+                            <a href="~/Admin/AdminPaneli/Anasayfa"> <i class="fa fa-fw fa-list"></i> AnaSayfa </a>
+                        }
+                        else
+                        {
+                            <a href="~/Admin/AdminPaneli/güncelle1/@anasayfa.Id"> <i class="fa fa-fw fa-list"></i> AnaSayfa </a>
+                        }
+                    </li>
+                    <li>
+                        @if (hakkında == null)
+                        {
+                            <a href="~/Admin/AdminPaneli/Hakkımızda"><i class="fa fa-fw fa-star"></i> Hakkımızda </a>
+                        }
+                        else
+                        {
+                            <a href="~/Admin/AdminPaneli/güncelle2/@hakkında.Id"><i class="fa fa-fw fa-star"></i> Hakkımızda </a>
+                        }
+                    </li>
+                    <li>
+                        @if (iletişim == null)
+                        {
+                            <a href="~/Admin/AdminPaneli/İletişim"><i class="fa fa-fw fa-envelope"></i>  İletişim </a>
+                        }
+                        else
+                        {
+                            <a href="~/Admin/AdminPaneli/güncelle4/@iletişim.Id"><i class="fa fa-fw fa-envelope"></i>  İletişim </a>
+                        }
+                    </li>
+                    <li>
+                        @if (hizmetler == null)
+                        {
+                            <a href="~/Admin/AdminPaneli/Hizmetler"><i class="fa fa-fw fa-comment"></i> Hizmetler </a>
+                        }
+                        else
+                        {
+                            <a href="~/Admin/AdminPaneli/güncelle3/@hizmetler.Id"><i class="fa fa-fw fa-comment"></i> Hizmetler </a>
+                        }
+                    </li>
+                    <li>
+                        <a href="~/Admin/AdminPaneli/Galeri"><i class="fa fa-fw fa-picture-o"></i> Galeri </a>
+                    </li>
+                    <li>
+                        @if (ödeme == null)
+                        {
+                            <a href="~/Admin/AdminPaneli/Ödeme"><i class="fa fa-fw fa-cc-visa"></i> Ödeme </a>
+                        }
+                        else
+                        {
+                            <a href="~/Admin/AdminPaneli/güncelle5/@ödeme.Id"><i class="fa fa-fw fa-cc-visa"></i> Ödeme </a>
+                        }
+                    </li>
+                    <li>
+                        <a href="~/Admin/AdminPaneli/Yuvamız"><i class="fa fa-fw fa-cube"></i> Yuvamız </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+        <div id="page-wrapper" style="background-color:antiquewhite;">
+            @RenderBody()
+        </div> <!-- /#page-wrapper -->
+    </div><!-- /#wrapper -->
+    <script src="~/js/adminpaneli.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</body>
+</html>

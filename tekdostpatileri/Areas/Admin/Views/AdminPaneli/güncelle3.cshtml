@@ -1,0 +1,275 @@
+﻿@using Microsoft.AspNetCore.Http
+@using tekdostpatileri.Models;
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@model tekdostpatileri.Models.Hizmetler
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@section başlık{
+      TekDostPatileri
+}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="~/css/adminpanel.css" type="text/css" rel="stylesheet" />
+
+<div class="container-fluid">
+    <div class="row" id="main">
+        <div class="col-sm-12 col-md-12 well" id="content">
+            @if (TempData["HataHİ"] != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @TempData["HataHİ"]
+                </div>
+            }
+            <form method="post" enctype="multipart/form-data" asp-controller="AdminPaneli" asp-action="güncelle3">
+                <div class="form-group">
+                    <label for="exampleInputPassword1">İhbarlarp1:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="ihbarp1" name="ihbarp1" id="ihbarp1">
+                        @if(TempData["HataHİ"] == null)
+                        {
+                            @Model.ihbarp1
+                        }
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">İhbarlarp2:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="ihbarp2" name="ihbarp2" id="ihbarp2">
+                        @if(TempData["HataHİ"] == null)
+                        {
+                            @Model.ihbarp2
+                        }
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Sağlıkp1:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="sağlıkp1" name="sağlıkp1" id="sağlıkp1">
+                        @if(TempData["HataHİ"] == null)
+                        {
+                            @Model.sağlıkp1
+                        }
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Sağlıkp2:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="sağlıkp2" name="sağlıkp2" id="sağlıkp2">
+                        @if(TempData["HataHİ"] == null)
+                        {
+                            @Model.sağlıkp2
+                        }
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Sağlıkp3:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="sağlıkp3" name="sağlıkp3" id="sağlıkp3">
+                        @if(TempData["HataHİ"] == null)
+                        {
+                            @Model.sağlıkp3
+                        }
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Sağlıkimg1:</label>
+                    <img width="100" height="100" src="/img/@if (TempData["HataHİ"] == null)
+                    {
+                        @Model.sağlıkimg1
+                    }"/>
+                    <input type="file" name="sağlıkimg1" class="form-control" />
+                    <input type="hidden" name="eskihizmetfotoğraf" class="form-control" value="@if (TempData["HataHİ"] == null)
+                           {
+                           @Model.sağlıkimg1
+                           }" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Sağlıkimg2:</label>
+                    <img width="100" height="100" src="/img/@if (TempData["HataHİ"] == null)
+                    {
+                        @Model.sağlıkimg2
+                    }"/>
+                    <input type="file" name="sağlıkimg2" class="form-control" />
+                    <input type="hidden" name="eskihizmetfotoğraf2" class="form-control" value="@if (TempData["HataHİ"] == null)
+                           {
+                           @Model.sağlıkimg2
+                           }" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Kısırlaştırmap1:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="kısırlaştırmap1" name="kısırlaştırmap1" id="kısırlaştırmap1">
+                        @if(TempData["HataHİ"] == null)
+                        {
+                            @Model.kısırlaştırmap1
+                        }
+                    </textarea>
+                </div> <div class="form-group">
+                    <label for="exampleInputPassword1">Kısırlaştırmap2:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="kısırlaştırmap2" name="kısırlaştırmap2" id="kısırlaştırmap2">
+                        @if(TempData["HataHİ"] == null)
+                        {
+                            @Model.kısırlaştırmap2
+                        }
+                    </textarea>
+                </div> <div class="form-group">
+                    <label for="exampleInputPassword1">Kısırlaştırmap3:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="kısırlaştırmap3" name="kısırlaştırmap3" id="kısırlaştırmap3">
+                        @if(TempData["HataHİ"] == null)
+                        {
+                            @Model.kısırlaştırmap3
+                        }
+                    </textarea>
+                </div> <div class="form-group">
+                    <label for="exampleInputPassword1">Kısırlaştırmap4:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="kısırlaştırmap4" name="kısırlaştırmap4" id="kısırlaştırmap4">
+                        @if(TempData["HataHİ"] == null)
+                        {
+                            @Model.kısırlaştırmap4
+                        }
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Kısırlaştırmap5:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="kısırlaştırmap5" name="kısırlaştırmap5" id="kısırlaştırmap5">
+                        @if(TempData["HataHİ"] == null)
+                        {
+                            @Model.kısırlaştırmap5
+                        }
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Kısırlaştırmap6:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="kısırlaştırmap6" name="kısırlaştırmap6" id="kısırlaştırmap6">
+                        @if(TempData["HataHİ"] == null)
+                        {
+                            @Model.kısırlaştırmap6
+                        }
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Kısırlaştırmap7:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="kısırlaştırmap7" name="kısırlaştırmap7" id="kısırlaştırmap7">
+                        @if(TempData["HataHİ"] == null)
+                        {
+                            @Model.kısırlaştırmap7
+                        }
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Kısırlaştırmaimg1:</label>
+                    <img width="100" height="100" src="/img/@if (TempData["HataHİ"] == null)
+                    {
+                        @Model.kısırlaştırmaimg1
+                    }"/>
+                    <input type="hidden" name="eskihizmetfotoğraf3" class="form-control" value="@if (TempData["HataHİ"] == null)
+                           {
+                           @Model.kısırlaştırmaimg1
+                           }" />
+                    <input type="file" name="kısırlaştırmaimg1" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Kısırlaştırmaimg2:</label>
+                    <img width="100" height="100" src="/img/@if (TempData["HataHİ"] == null)
+                    {
+                        @Model.kısırlaştırmaimg2
+                    }" />
+                    <input type="hidden" class="form-control" name="eskihizmetfotoğraf4" id="kısırlaştırmaimg2" value="@if (TempData["HataHİ"] == null)
+                           {
+                           @Model.kısırlaştırmaimg2
+                           }"/>
+                    <input type="file" name="kısırlaştırmaimg2" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Şiddetp1:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="şiddetp1" name="şiddetp1" id="şiddetp1">
+                        @if(TempData["HataHİ"] == null)
+                        {
+                            @Model.şiddetp1
+                        }
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Şiddetp2:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="şiddetp2" name="şiddetp2" id="şiddetp2">
+                        @if(TempData["HataHİ"] == null)
+                        {
+                            @Model.şiddetp2
+                        }
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Şiddetp3:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="şiddetp3" name="şiddetp3" id="şiddetp3">
+                        @if(TempData["HataHİ"] == null)
+                        {
+                            @Model.şiddetp3
+                        }
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Şiddetp4:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="şiddetp4" name="şiddetp4" id="şiddetp4">
+                        @if(TempData["HataHİ"] == null)
+                        {
+                            @Model.şiddetp4
+                        }
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Eğitimp1:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="eğitimp1" name="eğitimp1" id="eğitimp1">
+                        @if(TempData["HataHİ"] == null)
+                        {
+                            @Model.eğitimp1
+                        }
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Donörimg1:</label>
+                    <img width="100" height="100" src="/img/@if (TempData["HataHİ"] == null)
+                    {
+                        @Model.donörimg1
+                    }" />
+                    <input type="hidden" name="eskidonörimg1" class="form-control" value="@if (TempData["HataHİ"] == null)
+                           {
+                           @Model.donörimg1
+                           }" />
+                    <input type="file" name="donörimg1" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Donörp1:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="donörp1" name="donörp1" id="donörp1">
+                        @if (TempData["HataHİ"] == null)
+                        {
+                            @Model.donörp1
+                        }
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Sponsorimg1:</label>
+                    <img width="100" height="100" src="/img/@if (TempData["HataHİ"] == null)
+                    {
+                        @Model.sponsorimg1
+                    }" />
+                    <input type="hidden" class="form-control" name="eskisponsorimg1" value="@if (TempData["HataHİ"] == null)
+                           {
+                           @Model.sponsorimg1
+                           }" />
+                    <input type="file" name="sponsorimg1" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Sponsorp1:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="sponsorp1" name="sponsorp1" id="sponsorp1">
+                        @if (TempData["HataHİ"] == null)
+                        {
+                            @Model.sponsorp1
+                        }
+                    </textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Güncelle</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/adminpaneli.js"></script>
+<script src="~/ckeditor5-build-classic-40.0.0/ckeditor5-build-classic/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/44.0.0/classic/ckeditor.js"></script>
+<script src="~/js/CKedit.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>

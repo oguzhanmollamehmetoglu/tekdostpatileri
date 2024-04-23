@@ -1,0 +1,67 @@
+﻿@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	TekDostPatileriDbContext db = new TekDostPatileriDbContext();
+	var iletişimiçerik = db.iletişims.FirstOrDefault();
+}
+@section başlık{
+      TekDostPatileri | İletişim
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="~/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+<body>
+	<section class="there-section">
+		<div class="picture">
+            <img src="~/img/r2.png">
+		</div>
+	</section>
+    <section class="content-cont">
+        <div class="content-t">
+            <h3 class="content-title text-center"><b>İletişim</b></h3>
+        </div>
+        <div class="container section-q">
+            <div class="m text-center mobile-flex-wrap">
+            <div class="column c text-center mobile-center mobile-font-size-11">
+                <form class="Form1" method="post" asp-controller="Home" asp-action="iletişim">
+                    <input class="f1" type="text" name="Adi" placeholder="Adınız"><br>
+                    <input class="f1" type="text" name="Soyadi" placeholder="Soyadınız"><br>
+                    <input class="f1" type="email" name="Email" placeholder="Emailiniz"><br>
+                    <input class="f1" type="text" name="Konu" placeholder="Konu Başlığı"><br>
+                    <textarea class="f2" name="Mesaj" rows="6" cols="40" placeholder="Mesajınız"></textarea><br>
+                    <button class="f3" type="submit" name="gönder">Gönder</button><br>
+                </form>
+            </div>
+            <div class="column c text-left mobile-center mobile-font-size-11">
+                    <table class="content-icon mx-auto">
+                        <tbody>
+                            <tr>
+                                @if (iletişimiçerik != null)
+                                {
+                                    <td>
+                                        <div class="content-item">
+                                            <b class="e-posta">E-Posta</b><br>@Html.Raw(iletişimiçerik.Email)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="content-item">
+                                            <b class="adres">Adres</b><br>@Html.Raw(iletişimiçerik.Adres)
+                                        </div>
+                                    </td>
+                                }
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    </section>
+	<script type="text/javascript" src="~/js/script.js"></script>
+	<script type="text/javascript" src="~/js/navbar.js"></script>
+</body>
+</html>

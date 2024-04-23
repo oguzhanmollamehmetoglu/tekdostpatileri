@@ -1,0 +1,182 @@
+.container .info{
+	position: relative;
+	text-align: center;
+	line-height: 32px;
+	padding-top: 50px;
+}
+
+.detailinfo{
+	max-width: 19.666667%;
+}
+
+.detailinfo-t{
+	background-color: darkred;
+	height: 60px;
+}
+
+.detailinfo-t h2 {
+    font-size: 1.6vw;
+    line-height: 60px;
+    font-weight: 500;
+}
+
+.detailinfo-two{
+    background-color: darkred;
+    height: 60px;
+}
+
+.detailinfo-two h2 {
+    font-size: 1.5vw;
+    line-height: 60px;
+    font-weight: 500;
+}
+
+.nav-h {
+    background-color: #fff;
+}
+
+.nav-h {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.nav-ul .nav-link .active {
+    color: darkred;
+    background-color: #fff;
+}
+
+.nav-link.active a {
+  color: palevioletred; 
+}
+
+.nav-ul .nav-link {
+    border-radius: 0.25rem;
+    font-weight: 600;
+}
+
+.nav-ul a:hover {
+    color: darkred;
+}
+
+.nav-ul .nav-link {
+    display: block;
+}
+
+.nav-ul a {
+    padding: 0.5rem 1rem;
+}
+
+.nav-ul li {
+	line-height: 40px;
+    border-bottom: 1px solid #929393;
+}
+
+.nav-ul a {
+    color: black;
+    text-decoration: none;
+}
+
+/*Detaillist-*/
+
+.tab-content{
+    background-color: white;
+}
+
+.tab-content h3 {
+    font-size: 1.4vw;
+}
+
+.tab-content img {
+    vertical-align: middle;
+    border-style: none;
+}
+.tab-content .tab-pane #the-red-one .ig1 {
+     vertical-align: middle;
+     border-style: none;
+     float: left;
+     margin: 10px 10px 10px -5px;
+     width: 50%;
+}
+.tab-content .tab-pane #the-red-one .ig2 {
+    float:right; 
+    margin-left:10px; 
+    margin-right:10px; 
+    width:48.80%; 
+    height:50%; 
+}
+.tab-content .tab-pane #the-red-one .ig3 {
+    float:left; 
+    margin-left:10px; 
+    margin-right:10px; 
+    width:48.80%; 
+    height:50%;
+}
+.tab-content img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+.tab-pane{
+    display: none;
+    background-color: white;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+@media screen and (max-width:1024px){
+    .detailinfo{
+    flex: 100%;
+    max-width: 100%;
+}
+.detailinfo-data{
+    flex: 100%;
+    max-width: 100%;
+}
+.tab-content h3 {
+    font-size: 15px;
+}
+
+.detailinfo-t{
+    background-color: antiquewhite;
+    height: 60px;
+}
+
+.detailinfo-t h2 {
+    color: black;
+    font-size: 15px;
+}
+
+.detailinfo-two{
+    background-color: antiquewhite;
+    height: 60px;
+}
+
+.detailinfo-two h2 {
+    color: black;
+    font-size: 15px;
+}
+}
+@media screen and (max-width: 768px){
+    .tab-content .tab-pane #the-red-one .ig1 {
+        float: left;
+        margin: 10px 10px 10px -5px;
+        width: 100%;
+    }
+    .tab-content .tab-pane #the-red-one .ig2 {
+        float: left;
+        margin: 10px 10px 10px -5px;
+        width: 100%;
+        height: 50%;
+    }
+    .tab-content .tab-pane #the-red-one .ig3 {
+        float: left;
+        margin: 10px 10px 10px -5px;
+        width: 100%;
+        height: 50%;
+    }
+}

@@ -1,0 +1,208 @@
+﻿@using Microsoft.AspNetCore.Http
+@using tekdostpatileri.Models;
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@model tekdostpatileri.Models.Anasayfa
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    TekDostPatileriDbContext db = new TekDostPatileriDbContext();
+    var değer = db.anasayfas.FirstOrDefault();
+}
+@section başlık{
+      TekDostPatileri
+}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="~/css/adminpanel.css" type="text/css" rel="stylesheet" />
+
+<div class="container-fluid">
+    <div class="row" id="main">
+        <div class="col-sm-12 col-md-12 well" id="content">
+            @if (TempData["HataA"] != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @TempData["HataA"]
+                </div>
+            }
+            <form method="post" enctype="multipart/form-data" asp-controller="AdminPaneli" asp-action="güncelle1">
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Slider1Başlık:</label>
+                    <textarea type="text" class="form-control" item="slider1başlık" name="slider1başlık" id="slider1başlık">
+                        @if (TempData["HataA"] == null)
+                        {
+                            @Model.slider1başlık
+                        }
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Slider1Yazı:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="slider1yazı" name="slider1yazı" id="slider1yazı">
+                        @if (TempData["HataA"] == null)
+                        {
+                            @Model.slider1yazı
+                        }
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Slider1İmg:</label>
+                    <img width="100" height="100" src="/img/Slider/@if (TempData["HataA"] == null)
+                    {
+                        @Model.slider1img
+                    }" />
+                    <input type="file" name="slider1img" class="form-control"/>
+                    <input type="hidden" class="form-control" name="eskislider1" value="@if (TempData["HataY"] == null)
+                    {
+                    @Model.slider1img
+                    }"/>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Slider2Başlık:</label>
+                    <textarea type="text" class="form-control" item="slider2başlık" name="slider2başlık" id="slider2başlık">
+                        @if (TempData["HataA"] == null)
+                        {
+                            @Model.slider2başlık
+                        }
+                    </textarea>  
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Slider2Yazı:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="slider2yazı" name="slider2yazı" id="slider2yazı">
+                        @if (TempData["HataA"] == null)
+                        {
+                            @Model.slider2yazı
+                        }</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Slider2İmg:</label>
+                    <img width="100" height="100" src="/img/Slider/@if (TempData["HataA"] == null)
+                    {
+                        @Model.slider2img
+                    }" />
+                    <input type="file" name="slider2img" class="form-control"/>
+                    <input type="hidden" name="eskislider2" class="form-control" value="@if (TempData["HataA"] == null)
+                        {
+                        @Model.slider2img
+                        }" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Slider3Başlık:</label>
+                      <textarea type="text" class="form-control" item="slider3başlık" name="slider3başlık" id="slider3başlık" >
+                           @if (TempData["HataA"] == null)
+                           {
+                           @Model.slider3başlık
+                           }
+                      </textarea>
+                    </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Slider3Yazı:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="slider3yazı" name="slider3yazı" id="slider3yazı">
+                        @if (TempData["HataA"] == null)
+                        {
+                            @Model.slider3yazı
+                        }
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Slider3İmg:</label>
+                    <img width="100" height="100" src="/img/Slider/@if(TempData["HataA"] == null)
+                    {
+                        @Model.slider3img
+                    }" />
+                    <input type="file" name="slider3img" class="form-control"/>
+                    <input type="hidden" class="form-control" name="eskislider3" value="@if(TempData["HataA"] == null)
+                        {
+                            @Model.slider3img
+                        }" />
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Slider4Başlık:</label>
+                    <textarea type="text" class="form-control" item="slider4başlık" name="slider4başlık" id="slider4başlık">
+                        @if (TempData["HataA"] == null)
+                        {
+                            @Model.slider4başlık
+                        }
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Slider4Yazı:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="slider4yazı" name="slider4yazı" id="slider4yazı">
+                        @if (TempData["HataA"] == null)
+                        {
+                            @Model.slider4yazı
+                        }
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Slider4İmg:</label>
+                    <img width="100" height="100" src="/img/Slider/@if (TempData["HataA"] == null)
+                    {
+                        @Model.slider4img
+                    }" />
+                    <input type="file" name="slider4img" class="form-control"/>
+                    <input type="hidden" name="eskislider4" class="form-control" value="@if (TempData["HataA"] == null)
+                        {
+                            @Model.slider4img
+                        }" />
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Slider5Başlık:</label>
+                    <textarea type="text" class="form-control" item="slider5başlık" name="slider5başlık" id="slider5başlık">
+                        @if (TempData["HataA"] == null)
+                        {
+                            @Model.slider5başlık
+                        }
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Slider5Yazı:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="slider5yazı" name="slider5yazı" id="slider5yazı">
+                        @if (TempData["HataA"] == null)
+                        {
+                            @Model.slider5yazı
+                        }
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Slider5İmg:</label>
+                    <img width="100" height="100" src="/img/Slider/@if (TempData["HataA"] == null)
+                    {
+                        @Model.slider5img
+                    }" />
+                    <input type="file" name="slider5img" class="form-control"/>
+                    <input type="hidden" name="eskislider5" class="form-control" value="@if (TempData["HataA"] == null)
+                        {
+                            @Model.slider5img
+                        }" />
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">ÖnsözSesleniş:</label>
+                    <textarea type="text" class="form-control" item="önsözsesleniş" name="önsözsesleniş" id="önsözsesleniş">
+                           @if (TempData["HataA"] == null)
+                           {
+                           @Model.önsözsesleniş
+                           }
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Önsöz:</label>
+                    <textarea style="min-height:200px; width:100%; resize:none;" type="text" class="form-control" item="önsöz" name="önsöz" id="önsöz">
+                        @if (TempData["HataA"] == null)
+                        {
+                            @Model.önsöz
+                        }
+                    </textarea>
+                </div>
+             
+                <button type="submit" class="btn btn-primary">Güncelle</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="~/js/adminpaneli.js"></script>
+<script src="~/ckeditor5-build-classic-40.0.0/ckeditor5-build-classic/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/44.0.0/classic/ckeditor.js"></script>
+<script src="~/js/CKedit.js"></script>
