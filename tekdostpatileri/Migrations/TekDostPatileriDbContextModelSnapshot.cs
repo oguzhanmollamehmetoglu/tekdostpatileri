@@ -99,7 +99,7 @@ namespace tekdostpatileri.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("anasayfas");
+                    b.ToTable("anasayfas", (string)null);
                 });
 
             modelBuilder.Entity("tekdostpatileri.Models.Cevap", b =>
@@ -116,7 +116,7 @@ namespace tekdostpatileri.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("cevaps");
+                    b.ToTable("cevaps", (string)null);
                 });
 
             modelBuilder.Entity("tekdostpatileri.Models.Galeri", b =>
@@ -133,7 +133,7 @@ namespace tekdostpatileri.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("galeris");
+                    b.ToTable("galeris", (string)null);
                 });
 
             modelBuilder.Entity("tekdostpatileri.Models.Giriş", b =>
@@ -154,7 +154,7 @@ namespace tekdostpatileri.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("girişs");
+                    b.ToTable("girişs", (string)null);
                 });
 
             modelBuilder.Entity("tekdostpatileri.Models.Hakkında", b =>
@@ -259,7 +259,7 @@ namespace tekdostpatileri.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("hakkındas");
+                    b.ToTable("hakkındas", (string)null);
                 });
 
             modelBuilder.Entity("tekdostpatileri.Models.Hizmetler", b =>
@@ -372,7 +372,7 @@ namespace tekdostpatileri.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("hizmetlers");
+                    b.ToTable("hizmetlers", (string)null);
                 });
 
             modelBuilder.Entity("tekdostpatileri.Models.İletişim", b =>
@@ -409,7 +409,7 @@ namespace tekdostpatileri.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("iletişims");
+                    b.ToTable("iletişims", (string)null);
                 });
 
             modelBuilder.Entity("tekdostpatileri.Models.Logo", b =>
@@ -426,7 +426,7 @@ namespace tekdostpatileri.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("logos");
+                    b.ToTable("logos", (string)null);
                 });
 
             modelBuilder.Entity("tekdostpatileri.Models.Mail", b =>
@@ -459,7 +459,7 @@ namespace tekdostpatileri.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("mails");
+                    b.ToTable("mails", (string)null);
                 });
 
             modelBuilder.Entity("tekdostpatileri.Models.Ödeme", b =>
@@ -496,7 +496,7 @@ namespace tekdostpatileri.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ödemes");
+                    b.ToTable("ödemes", (string)null);
                 });
 
             modelBuilder.Entity("tekdostpatileri.Models.Yuvamız", b =>
@@ -537,7 +537,7 @@ namespace tekdostpatileri.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("yuvamızs");
+                    b.ToTable("yuvamızs", (string)null);
                 });
 #pragma warning restore 612, 618
         }

@@ -6,7 +6,7 @@ namespace tekdostpatileri.Models
     {
             protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             {
-                optionsBuilder.UseSqlServer("Data Source=OGUZHAN;Initial Catalog=SqlTekDostPatileriDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                optionsBuilder.UseSqlServer("Data Source=Huawei\\OGUZHAN;Initial Catalog=SqlTekDostPatileriDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
                 //optionsBuilder.UseSqlServer("Data Source=94.73.144.21;Initial Catalog=u9544174_pati; User Id=u9544174_pati;Password=4QF4su-_tfD=:92Q;");
             }
 
